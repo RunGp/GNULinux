@@ -301,7 +301,7 @@ then
     echo "[1] Aucun supplément (par défaut : Evince pour pdf, LibreOffice en bureautique, Thunderbird pour les mails)"
     echo "[2] Supplément LibreOffice : ajout du module 'Base' + des extensions utiles (templates, modèles de documents, clipboard...)"
     echo "[3] PdfMod (logiciel permettant diverses modifications sur vos PDF)"
-    echo "[4] Suite Scenari (scenarichaine + opale : famille d'applications d'édition avancées de chaînes éditoriales)"
+    echo "[4] Suite Scenari (scenarichaine 4.2 + opale : famille d'applications d'édition avancées de chaînes éditoriales)"
     echo "[5] Freeplane (création de cartes heuristiques (Mind Map) avec des diagrammes représentant les connexions sémantiques)"
     echo -e "[6] FeedReader ${bleu}[Flatpak]${neutre} (agrégateur RSS moderne pour consulter vos fils d'informations RSS)"
     echo "[7] Geary (logiciel de messagerie, alternative à Thunderbird et bien intégré à Gnome)"
