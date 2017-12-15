@@ -187,6 +187,7 @@ then
     echo -e "[14] Vuze ${jaune}[Snap]${neutre} (plate-forme commerciale d'Azureus avec BitTorrent)"
     echo -e "[15] Gydl ${bleu}[Flatpak]${neutre} (permet de télécharger des vidéos Youtube ou juste la piste audio)"
     echo -e "[16] WebTorrent (permet le streamming de flux vidéo décentralisé via le protocole bittorrent)"
+    echo -e "[17] WormHole (un outil en CLI permettant le transfert sécurisé à travers n'importe quel réseau)"
     echo "*******************************************************"
     read -p "Répondre par le ou les chiffres correspondants (exemple : 2 3 4 15) : " choixTelechargement
     clear
@@ -872,10 +873,7 @@ do
         "19") #signal (flatpak)
             flatpak install --from https://vrutkovs.github.io/flatpak-signal/signal.flatpakref -y
             ;;           
-        "20") #tox/qtpx
-            apt install tox -y
-            ;;  
-        "21") #Récupération du script d'installation de teamspeak (à lancer manuellement par l'utilisateur)
+        "20") #Récupération du script d'installation de teamspeak (à lancer manuellement par l'utilisateur)
             wget http://dl.4players.de/ts/releases/3.1.6/TeamSpeak3-Client-linux_amd64-3.1.6.run ; chmod +x TeamSpeak* ; chown $SUDO_USER TeamSpeak*
             mv TeamSpeak* /home/$SUDO_USER/
             ;; 
@@ -934,6 +932,9 @@ do
             wget https://github.com/webtorrent/webtorrent-desktop/releases/download/v0.18.0/webtorrent-desktop_0.18.0-1_amd64.deb
             dpkg -i webtorrent-desktop_0.18.0-1_amd64.deb ; apt install -fy ; rm webtorrent-desktop_0.18.0-1_amd64.deb
             ;;
+        "17") #WormHole
+            apt install wormhole -y
+            ;;            
     esac
 done
 
