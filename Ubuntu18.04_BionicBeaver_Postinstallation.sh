@@ -601,7 +601,7 @@ then
     echo -e "[5] Cerebro ${vert}[Appimage]${neutre}"
     echo -e "[6] Chronos ${vert}[Appimage]${neutre}"
     echo -e "[7] Crypter ${vert}[Appimage]${neutre}"
-    echo -e "[8] Dedop studio ${vert}[Appimage]${neutre}"
+    echo -e "[8] Jaxx ${vert}[Appimage]${neutre}"
     echo -e "[9] Imagine ${vert}[Appimage]${neutre}"
     echo -e "[10] Infinite Electron ${vert}[Appimage]${neutre}"
     echo -e "[11] Kdenlive ${vert}[Appimage]${neutre}"
@@ -1934,8 +1934,8 @@ do
         "7") #Crypter
             wget https://github.com/HR/Crypter/releases/download/v3.1.0/Crypter-3.1.0-x86_64.AppImage
             ;;
-        "8") #Dedop studio
-            wget https://github.com/DeDop/dedop-studio/releases/download/v1.2.0/DeDop-studio-1.2.0-x86_64.AppImage
+        "8") #Jaxx
+            wget https://github.com/Jaxx-io/Jaxx/releases/download/v1.3.9/jaxx-1.3.9-x86_64.AppImage
             ;;            
         "9") #Imagine
             wget https://github.com/meowtec/Imagine/releases/download/v0.4.0/Imagine-0.4.0-x86_64.AppImage
