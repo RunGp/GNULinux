@@ -635,7 +635,7 @@ sed -i "/^# deb .*partner/ s/^# //" /etc/apt/sources.list
 apt update ; apt full-upgrade -y ; apt autoremove --purge -y ; apt clean
 
 #Paquet Snappy & Flatpak (snapd est déjà installé sur Ubuntu mais pas forcément sur les dérivés)
-apt install snapd flatpak -y
+apt install snapd flatpak gnome-software-plugin-flatpak -y
 
 #Police d'écriture Microsoft
 echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | /usr/bin/debconf-set-selections | apt install ttf-mscorefonts-installer -y
