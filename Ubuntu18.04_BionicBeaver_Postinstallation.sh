@@ -1,5 +1,5 @@
 #!/bin/bash
-# version 0.1.1 (béta)
+# version 0.1.2 (béta)
 
 #  Copyleft 2017 GammaDraconis 
 #  
@@ -158,7 +158,7 @@ then
     echo "[13] Hexchat (client IRC, fork de xchat)"
     echo "[14] Polari (client IRC pour Gnome)"
     echo -e "[15] Discord ${jaune}[Snap]${neutre} (logiciel propriétaire multiplateforme pour communiquer à plusieurs, pour les gameurs)"
-    echo -e "[16] Telegram ${jaune}[Snap]${neutre} (appli de messagerie basée sur le cloud avec du chiffrage)"
+    echo -e "[16] Telegram (appli de messagerie basée sur le cloud avec du chiffrage)"
     echo -e "[17] Viber ${bleu}[Flatpak]${neutre} (logiciel de communication, surtout connu en application mobile)"
     echo -e "[18] Slack ${bleu}[Flatpak]${neutre} (plate-forme de communication collaborative propriétaire avec gestion de projets)"
     echo -e "[19] Signal ${bleu}[Flatpak]${neutre} (messagerie instantanée cryptée recommandée par Edward Snowden)"
@@ -214,8 +214,8 @@ then
     echo "[15] Xmms2+Gxmms2 (un autre lecteur audio dans le style de Winamp)"
     echo "[16] Gnome Twitch (pour visionner les flux vidéo du site Twitch depuis votre bureau sans utiliser de navigateur)"
     echo -e "[17] Lollypop ${bleu}[Flatpak]${neutre} (lecteur de musique adapté à Gnome avec des fonctions très avancées)"
-    echo -e "[18] Spotify ${bleu}[Flatpak]${neutre} (permet d'accéder gratuitement et légalement à de la musique en ligne)"
-    echo -e "[19] MuseScore ${bleu}[Flatpak]${neutre} (l'éditeur de partitions de musique le plus utilisé au monde !)"
+    echo -e "[18] Spotify ${jaune}[Snap]${neutre} (permet d'accéder gratuitement et légalement à de la musique en ligne)"
+    echo -e "[19] MuseScore (l'éditeur de partitions de musique le plus utilisé au monde !)"
     echo -e "[20] GRadio ${bleu}[Flatpak]${neutre} (application Gnome pour écouter la radio, plus de 1 000 références rien qu'en France !)"
     echo -e "[21] Molotov.TV ${vert}[Appimage]${neutre} (service français de distribution de chaînes de TV)"
     echo "*******************************************************"
@@ -393,7 +393,7 @@ then
     echo "[12] Gnome Games (pack d'une dizaine de mini-jeux pour Gnome)"
     echo "[13] Megaglest (RTS 3d dans un monde fantastique avec 2 factions qui s'affrontent : la magie et la technologie)"
     echo "[14] Pingus (clone de Lemmings, vous devrez aider des manchots un peu idiots à traverser des obstacles)"
-    echo -e "[15] Battle for Wesnoth ${bleu}[Flatpak]${neutre} (stratégie, le joueur doit se battre pour retrouver sa place dans le royaume)"
+    echo -e "[15] Battle for Wesnoth (stratégie, le joueur doit se battre pour retrouver sa place dans le royaume)"
     echo -e "[16] Albion Online ${bleu}[Flatpak]${neutre} (MMORPG avec système de quête et donjons)"
     echo -e "[17] RuneScape ${bleu}[Flatpak]${neutre} (reconnu MMORPG gratuit le plus populaire au monde avec plus de 15 millions de comptes F2P)"
     echo "*******************************************************"
@@ -860,8 +860,8 @@ do
         "15") #discord (via snap)
             snap install discord
             ;;
-        "16") #telegram (Snap)
-            snap install telegram-sergiusens
+        "16") #telegram 
+            apt install telegram-desktop -y
             ;;                 
         "17") #viber
             flatpak install --from https://flathub.org/repo/appstream/com.viber.Viber.flatpakref -y
@@ -993,13 +993,13 @@ do
         "17") #Lollypop 
             flatpak install --from https://flathub.org/repo/appstream/org.gnome.Lollypop.flatpakref -y
             ;;             
-        "18") #Spotify (via flatpak)
-            flatpak install --from https://flathub.org/repo/appstream/com.spotify.Client.flatpakref -y
+        "18") #Spotify (snap)
+            snap install spotify
             ;;     
-        "19") #MuseScore (via flatpak)
-            flatpak install --from https://flathub.org/repo/appstream/org.musescore.MuseScore.flatpakref -y
+        "19") #MuseScore 
+            apt install musescore -y
             ;;    
-        "20") #Gradio (flatpak)
+        "20") #Gradio (flatpak) // Paquet snappy existant mais semble poser problème
             flatpak install --from https://flathub.org/repo/appstream/de.haeckerfelix.gradio.flatpakref -y
             ;;  
         "21") #Molotov.tv (appimage)
@@ -1028,10 +1028,8 @@ do
         "5") #KDEnLive
             apt install kdenlive breeze-icon-theme -y
             ;;
-        "6") #OpenShot Video Editor (PPA stable utilisé car version trop ancienne dans dépot officiel - PPA pour bionic)
-            echo "deb http://ppa.launchpad.net/openshot.developers/ppa/ubuntu zesty main" >> /etc/apt/sources.list.d/openshot-stable.list 
-            apt-key adv --recv-keys --keyserver keyserver.ubuntu.com FBA0C227099A5360635E3D9152165BD6B9BA26FA
-            apt update ; apt install openshot-qt -y
+        "6") #OpenShot Video Editor 
+            apt install openshot-qt -y
             ;;
         "7") #Pitivi
             apt install pitivi -y
@@ -1060,14 +1058,14 @@ do
         "14") #DeVeDe 
             apt install devede -y
             ;;     
-        "15") #Peek (via Flatpak)
+        "15") #Peek (via Flatpak) // paquet snappy existant mais semble poser problème
             flatpak install --from https://flathub.org/repo/appstream/com.uploadedlobster.peek.flatpakref -y
             ;;  
         "16") #Avidemux (AppImage)
             wget http://nux87.free.fr/script-postinstall-ubuntu/appimage/avidemux2.7.0.AppImage
             chmod +x avidemux2.7.0.AppImage
             ;;    
-        "17") #Shotcut (PPA pour Bionic pas encore actif)
+        "17") #Shotcut (PPA pour Bionic pas encore actif) // existe en snappy mais ne semble pas fonctionner
             add-apt-repository "deb http://ppa.launchpad.net/haraldhv/shotcut/ubuntu zesty main" -y
             apt-key adv --recv-keys --keyserver keyserver.ubuntu.com D03D19F673FED66EBD64099959A9D327745898E3
             apt update ; apt install shotcut -y
@@ -1448,7 +1446,7 @@ do
             apt install pingus -y            
             ;;
         "15") #Battle for Wesnoth
-            flatpak install --from https://flathub.org/repo/appstream/org.wesnoth.Wesnoth.flatpakref -y   
+            apt install wesnoth -y
             ;;
         "16") #Albion online
             flatpak install --from https://flathub.org/repo/appstream/com.albiononline.AlbionOnline.flatpakref -y
@@ -1656,7 +1654,7 @@ do
         "13") #SciTE
             apt install scite -y
             ;;  
-        "14") #Eclipse
+        "14") #Eclipse // version présent aussi dans dépot officiel mais obsolète
             wget http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz
             tar xvfz eclipse-inst-linux64.tar.gz
             chmod +x ./eclipse-installer/eclipse-inst
@@ -1722,7 +1720,7 @@ do
             rm /swapfile #supprime le fichier swap qui n'est plus utile
             sed -i -e '/.swapfile*/d' /etc/fstab #ligne swap retiré de fstab
             ;;
-        "4") #Activer TLP + install Powertop
+        "4") #Activer TLP + install Powertop (Attention : TLP installe postfix en dépendance)
             apt install tlp powertop -y
             systemctl enable tlp
             systemctl emable tlp-sleep
@@ -1731,7 +1729,7 @@ do
         "5") #Microcode Intel
             apt install intel-microcode -y
             ;;
-        "6") #Mode fraude Wayland (proposé par Christophe C sur Ubuntu-fr.org)  #pas encore testé
+        "6") #Mode fraude Wayland (proposé par Christophe C sur Ubuntu-fr.org)
             echo "#FONCTION POUR CONTOURNER WAYLAND
             fraude(){ 
                 xhost + && sudo \$1 && xhost -
