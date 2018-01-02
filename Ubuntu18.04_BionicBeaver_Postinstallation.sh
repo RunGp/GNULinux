@@ -1,5 +1,13 @@
 #!/bin/bash
-# version 0.1.2 (béta)
+# version 0.1.3 (béta)
+
+# *********************************************************************************************
+# Si vous voulez faire une petite donation en crypto-monnaie, voici les adresses :
+# Bitcoin (BTC) : 159pPQ7ceR5r6MC6W9SkGxFifTpKaiEZG3
+# Bitcoin Cash (BCH) : 1CNSQ1E3hj3Xzt7APKTr45YZzrCnKWKBtc
+# Ethereum (ETH) : 0x55aE64dBdf1416e0D641FD4B719205dc9f02bfF8
+# Litecoin (LTC) : LM1w2ojNTXiu2Q4opiSEEPebefiA5H4gro
+# *********************************************************************************************
 
 #  Copyleft 2017 GammaDraconis 
 #  
